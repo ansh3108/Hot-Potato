@@ -1,43 +1,59 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f9f9f9;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-}
-
-h1{
-    color:#333;
-}
-
-.game-container{
+    background: linear-gradient(135deg, #ffafbd, #ffc3a0);
     text-align: center;
+    color: #333;
+    margin: 0;;
+    padding: 0;
+}
+
+#game-container{
+    border: 5px solid #fff;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 50px auto;
+    width: 300px;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+#time-left{
+    font-size: 2rem;
+    color: #ff6f61;
 }
 
 #pass-potato-button{
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #ff5722;
+    background-color: #ff6f61;
     color: white;
+    padding: 15px 30px;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
 }
 
-#pass-potatot-button:hover{
-    background-color: #e64a19;
+#pass-potato-button:hover{
+    background-color: #ff4f39;
 }
 
 #consequence{
+    font-size: 1.5rem;
     margin-top: 20px;
-    font-size: 18px;
-    color: #ff5722;
+    color: #4a4e69;
 }
 
 .hidden{
     display: none;
+}
+
+@media (max-width:600px){
+    #game-container{
+        width: 90%;
+    }
+
+    #pass-potato-button{
+        width: 100%;
+        font-size: 1.5rem;
+    }
 }
