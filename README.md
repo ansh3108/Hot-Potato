@@ -4,7 +4,8 @@ An interactive web-based game where you can pass a virtual potato while a timer 
 
 ## Demo
 
-<!-- to be added -->
+https://github.com/user-attachments/assets/5b9e4167-f695-4859-a1a1-b8fbb84cf8b7
+
 
 ## 📂Project Structure
 
