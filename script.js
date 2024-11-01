@@ -60,4 +60,5 @@ passPotatoButton.addEventListener("click", () => {
 
 window.onload=async function(){
     await loadConsequences();
+    startTimer();
 }
