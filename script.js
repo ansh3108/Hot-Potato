@@ -32,7 +32,7 @@ function startTimer(){
 function triggerConsequence(){
     if(consequences.length >0){
         const randomConsequence=consequences[Math.floor(Math.random()*consequences.length)];
-        consequenceDisplay.textContent=`Consequence: #{randomConsequence}`;
+        consequenceDisplay.textContent = `Consequence: ${randomConsequence}`;
         consequenceDisplay.classList.remove("hidden");
     } else{
         consequenceDisplay.textContent="Cannot load consequences!";
