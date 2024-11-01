@@ -6,21 +6,24 @@ const passPotatoButton=document.getElementById("pass-potato-button");
 let consequences=[];
 
 async function loadConsequences() {
-    try{
+    try {
         const response=await fetch('consequences.json');
+        if(!response.ok){
+            throw new Error("Network error");
+        }  
         const data=await response.json();
         consequences=data.consequences;
-        console.log("Loaded consequences! ",consequences);
-    } catch(error){
-        console.error("Failed to load consequences: ". error);
-    }
+        console.log("Consequences loaded: ",consequences);      
+    } catch (error) {
+        console.error("Failed to load consequences: ",error);
+    }    
 }
 
 function startTimer(){
-    console.log("Timer started");
-    timeLeft=Math.floor(Math.random()*6)+5; //random time btw 5 and 10 seconds
+    console.log("Timer starting");
+    timeLeft=Math.floor(Math.random()*6)+5;
     timeDisplay.textContent=timeLeft;
-    
+
     countdown=setInterval(() => {
         console.log("Running timer interval");
         timeLeft-=1;
@@ -34,17 +37,3 @@ function startTimer(){
     }, 1000);
 }
 
-function hideConsequence(){
-    consequenceDisplay.classList.add("hidden");
-}
-
-passPotatoButton.addEventListener("click",() => {
-    console.log("Pass the potato button clicked");
-    hideConsequence();
-    startTimer();
-});
-
-window.onload=async function(){
-    await loadConsequences();
-    startTimer();
-}
