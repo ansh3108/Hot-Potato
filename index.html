@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hot Potato</title>
+    <title>Hot potato</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Hot Potato</h1>
-        <div class="pass-potato-button" onclick="passPotato()">Pass the potato</div>
-        <div class="timer">Time left: <span id="time-left">10</span>seconds</div>
-        <div id="consequence" class="consequence hidden"></div>
-    </div>
+    <h1>Hot potato</h1>
+    <div class="game-container">
+        <span id="time-left">10</span>seconds left
+        <button id="pass-potato-button">Pass the potato</button>
+        <div id="consequence" class="hidden"></div>
+    </div>   
+    
     <script src="script.js"></script>
 </body>
 </html>
