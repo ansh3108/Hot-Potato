@@ -21,7 +21,7 @@ async function loadConsequences() {
 
 function startTimer(){
     console.log("Timer starting");
-    timeLeft=Math.floor(Math.random()*6)+5;
+    timeLeft=Math.floor(Math.random()*6)+5; //random time btw 5 and 10 seconds
     timeDisplay.textContent=timeLeft;
 
     countdown=setInterval(() => {
@@ -37,3 +37,27 @@ function startTimer(){
     }, 1000);
 }
 
+function triggerConsequence(){
+    if(consequences.length>0){
+        const randomConsequence=consequences[Math.floor(Math.random())*consequences.length];
+        consequenceDisplay.textContent=`Consequence: ${randomConsequence}`
+        consequenceDisplay.classList.remove("hidden");
+    } else{
+        consequenceDisplay.textContent="Consequence not available!";
+        consequenceDisplay.classList.remove("hidden")
+    }
+}
+
+function hideConsequence(){
+    consequenceDisplay.classList.add("hidden");
+}
+
+passPotatoButton.addEventListener("click", () => {
+    console.log("Pass the potato button clicked");
+    hideConsequence();
+    startTimer();
+});
+
+window.onload=async function(){
+    await loadConsequences();
+}
